@@ -1,0 +1,125 @@
+/* 这几天接触Bootstrap,好奇它是怎么实现的栅格,于是看了下源码,挺容易的.
+  * 照样子自己实现了一个简单的备忘.
+  * @songzhj
+  */
+
+* {
+	box-sizing: border-box;
+}
+
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.row {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.container::after,
+.row::after,
+ {
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+.container::before,
+.row::before {
+	display: table;
+	content: " ";
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+.col-sm1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+	.col-sm-1 {
+		float: left;
+		width: 16.66666667%;
+	}
+	.col-sm-2 {
+		/*width: 100%;*/
+		float: left;
+		width: 33.33333333%;
+	}
+
+	.col-sm-3 {
+		float: left;
+		width: 50%;
+	}
+
+	.col-sm-4 {
+		float: left;
+		width: 66.66666667%;
+	}
+
+	.col-sm-5 {
+		float: left;
+		width: 83.33333333%;
+	}
+
+	.col-sm-6 {
+		float: left;
+		width: 100%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.col-md-1 {
+		float: left;
+		width: 16.66666667%;
+	}
+
+	.col-md-2 {
+		float: left;
+		width: 33.33333333%;
+	}
+
+	.col-md-3 {
+		float: left;
+		width: 50%;
+	}
+
+	.col-md-4 {
+		float: left;
+		width: 66.66666667%;
+	}
+
+	.col-md-5 {
+		float: left;
+		width: 83.33333333%;
+	}
+
+	.col-md-6 {
+		float: left;
+		width: 100%;
+	}
+
+}
