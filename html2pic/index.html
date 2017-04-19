@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="./src/common/jquery-3.2.1.js"></script>
+	<script src="./src/common/html2canvas.js"></script>
+	<style>
+		.bg {
+			position: relative;
+			background-image: url(./img/1111.jpg);
+			width: 200px;
+			height: 200px;
+		}
+		h1 {
+			position: absolute;
+			top: 100px;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="bg">
+		<h1 id="name">songz</h1>
+		<p id="qt">zhijia.song</p>
+	</div>
+	<div class="after"></div>
+	<script>
+		var nameList = [
+			{
+				id: "zhijia.song",
+				name: "songzhijia"
+			},
+			{
+				id: "yidi.zhao",
+				name: "zhaoyidi"
+			},
+			{
+				id: "xiaomiao.zhang",
+				name: "zhangxiaomiao"
+			}
+		];
+		function toPng() {
+			html2canvas($('.bg')).then(function(canvas) {
+			    	var imgUri = canvas.toDataURL("image/png");
+			    	$.ajax({
+			    		type: 'POST',
+			    		dataType: 'json',
+			    		url: '/saveImg',
+			    		data: imgUri
+			    	}).done(function(data) {
+			    		console.log(data);
+			    	}).fail(function(err) {
+			    		console.log(err);
+			    	});
+			    });	
+		}
+
+		$.each(nameList, function(i, item) {
+			$('#name').text(item.name);
+			$('#qt').text(item.id);
+			toPng();
+		});
+	</script>
+</body>
+</html>
