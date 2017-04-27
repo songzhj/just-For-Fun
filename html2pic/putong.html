@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="./src/common/jquery-3.2.1.js"></script>
+	<script src="./src/common/html2canvas.js"></script>
+	<style>
+		.bg {
+			position: relative;
+			background-image: url(./img/putong.png);
+			width: 820px;
+			height: 1159px;
+		}
+		#name {
+			position: absolute;
+			height: 64px;
+			width: 173px;
+			top: 522px;
+			left: 323px;
+			font-size: 48px;
+			display: flex;
+			justify-content: space-around;
+		}
+		#qt {
+			position: absolute;
+			text-align: center;
+			height: 21px;
+			width: 162px;
+			top: 594px;
+			left: 323px;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="bg">
+		<div id="name">songz</div>
+		<p id="qt">zhijia.song</p>
+	</div>
+	<div class="after"></div>
+	<script src="./const.js"></script>
+	<script>
+		function toPng(name) {
+			html2canvas($('.bg')).then(function(canvas) {
+			    	var imgUri = canvas.toDataURL("image/png");
+			    	$.ajax({
+			    		type: 'POST',
+			    		dataType: 'json',
+			    		url: '/saveImg',
+			    		data: {
+			    			imgUri: imgUri,
+			    			name: '普通-' + name
+			    		}
+			    	}).done(function(data) {
+			    		console.log(data);
+			    	}).fail(function(err) {
+			    		console.log(err);
+			    	});
+			    });	
+		}
+
+		$.each(putongNamelist, function(i, item) {
+			setTimeout(function() {
+				$('#name').text(item.name);
+				$('#qt').text(item.id);
+				toPng(item.name);
+			}, i * 400);
+		});
+	</script>
+</body>
+</html>

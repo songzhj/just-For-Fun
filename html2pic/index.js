@@ -9,9 +9,11 @@ function saveImg(request, response) {
 	request.on("data", (chunk) => info += chunk);
 	console.log('in');
 	request.on("end", () => {
-		let base64Data = info.replace(/^data:image\/\w+;base64,/, "");
+		let filename = getQueryString(info, 'name').replace(/\+/g, '');
+		let preBase64Data = getQueryString(info, 'imgUri');
+		let base64Data = preBase64Data.replace(/^data:image\/\w+;base64,/, "");
 		let dataBuffer = new Buffer(base64Data, 'base64');
-		fs.writeFile('./files/' + i + '.png', dataBuffer, "utf8", (err) => {
+		fs.writeFile('./files/' + filename + '.png', dataBuffer, "utf8", (err) => {
 		    if (err) {
 		        console.error(err);
 		    }
@@ -21,6 +23,12 @@ function saveImg(request, response) {
 		response.end('{"data": "ok"}');
 	});
 }
+
+function getQueryString(t, name) { 
+	let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+	let r = t.match(reg); 
+	if (r != null) return decodeURIComponent(r[2]); return null; 
+} 
 
 let server = http.createServer(function(request, response) {
 	let path = url.parse(request.url).pathname;
