@@ -1,0 +1,142 @@
+@import url(./reset.css);
+@charset "utf-8";
+body {
+	background: #000;
+	overflow: hidden;
+}
+.section {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	font-size: .18rem;
+}
+/* section1 */
+.section1 {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7998ba), to(#1c232b), color-stop(.8,#1c232b));
+	color: #fff;
+	text-align: center;
+}
+.section1-inner {
+	flex: 1;
+}
+.section1-inner .conclution {
+	line-height: .75rem;
+}
+.section1-inner .article-title {
+	line-height: .75rem;
+	font-size: .27rem;
+	font-weight: bold;
+}
+.conclution {
+	font-size: .24rem;
+}
+
+/* section2 */
+.section2 {
+	background: -webkit-gradient(linear, 15% 0%, 12% 78%, from(#181818), to(#484a52));
+	color: #fff;
+	text-align: center;
+}
+.section2-inner {
+	flex: 1;
+}
+.section2-title {
+	font-size: .27rem;
+	line-height: .9rem;
+}
+.section2 img {
+	opacity: .5;
+	vertical-align: top;
+}
+.img-q1 {
+	width: 2.1rem;
+	height: 6.2rem;
+}
+.img-q2 {
+	width: 2.1rem;
+	height: 6.2rem;
+}
+.img-q3 {
+	width: 2.1rem;
+	height: 6.2rem;
+}
+.img-q4 {
+	width: 2.1rem;
+	height: 6.2rem;
+}
+.img-q5 {
+	width: 1.5rem;
+	height: 2rem;
+}
+
+/* section3 */
+.section3 {
+	background: -webkit-gradient(linear, 3% 0%, 15% 100%, from(#1f2024), to(#7b828f));
+	color: #fff;
+	text-align: center;
+	font-size: .2rem;
+}
+.section3-inner {
+	flex: 1;
+}
+.section3-inner p{
+	line-height: .65rem;
+}
+
+/* section4 */
+.section4 {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#414757), to(#303440));
+	color: #fff;
+	text-align: center;
+}
+.section4-inner {
+	flex: 1;
+}
+.section4-title {
+	font-size: .27rem;
+	line-height: .9rem;
+}
+.section4 img {
+	opacity: .5;
+	vertical-align: top;
+}
+.img-w1 {
+	width: 2.1rem;
+	height: 6.2rem;
+}
+.img-w2 {
+	width: 2.1rem;
+	height: 6.2rem;
+}
+.img-w3 {
+	width: 2.1rem;
+	height: 6.2rem;
+}
+.img-w4 {
+	width: 2rem;
+	height: 2.5rem;
+}
+
+/* section5 */
+.section5 {
+	background: -webkit-gradient(linear, 68% 62%, 62% 18%, from(#1d1d21), to(#575c66));
+	color: #fff;
+	text-align: center;
+	font-size: .2rem;
+}
+.section5-inner {
+	flex: 1;
+}
+.section5-inner p{
+	line-height: .65rem;
+}
+
+/* section6 */
+.section6 {
+	color: #fff;
+	text-align: center;
+	font-size: .4rem;
+}
+.thx {
+	flex: 1;
+}

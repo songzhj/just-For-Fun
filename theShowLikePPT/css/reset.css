@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+/*
+ * 1. 防止用户自定义网页背景及文字颜色、大小影响
+ */
+html {
+    background-color: #fff;
+    color: #000;
+    font-size: 12px;
+}
+
+/*
+ * 1. 清除某些元素在不同浏览器下外补白不同造成的影响
+ * 2. 清除某些元素在不同浏览器下内补白不同造成的影响
+ */
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+p,
+blockquote,
+th,
+td,
+pre,
+xmp {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * 1. 设置默认行高，
+ * 2. 设置正文的字体序列，表单及某些特殊元素不继承祖先font相关属性
+ */
+body,
+input,
+textarea,
+button,
+select,
+pre,
+xmp,
+tt,
+code,
+kbd,
+samp {
+    line-height: 1.5;
+    font-family: tahoma, arial, "Hiragino Sans GB", simsun, sans-serif;
+}
+
+/*
+ * 1. 清除某些元素不继承祖先元素font-size的影响
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+big,
+input,
+textarea,
+button,
+select {
+    font-size: 100%;
+}
+
+/*
+ * 1. 定义标题所使用的字体序列，雅黑需写中文避免IE7及以下的错误显示
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: tahoma, arial, "Hiragino Sans GB", "微软雅黑" , simsun, sans-serif;
+}
+
+/*
+ * 1. 将呈现为粗体的元素重置为正常文本
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+    font-weight: normal;
+}
+
+/*
+ * 1. 将呈现为斜体的元素重置为正常文本
+ */
+address,
+cite,
+dfn,
+em,
+i,
+optgroup,
+var {
+    font-style: normal;
+}
+
+/*
+ * 1.清除单元格边距并让边框合并
+ */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left;
+}
+
+/*
+ * 1. 设置caption继承父元素的对齐方式，同时修复IE下th不继承父元素对齐方式bug
+ */
+caption,
+th {
+    text-align: inherit;
+}
+
+/*
+ * 1. 清除列表默认序号
+ */
+ul,
+ol,
+menu {
+    list-style: none;
+}
+
+/*
+ * 1. 清除默认边框
+ */
+fieldset,
+img {
+    border: 0;
+}
+
+/*
+ * 1. 设置某些元素居中对齐
+ */
+img,
+object,
+input,
+textarea,
+button,
+select {
+    vertical-align: middle;
+}
+
+/*
+ * 1. 设置某些HTML5元素为块元素
+ */
+article,
+aside,
+footer,
+header,
+section,
+nav,
+figure,
+figcaption,
+hgroup,
+details,
+menu {
+    display: block;
+}
+
+/*
+ * 1. 设置HTML5新增媒体元素与img,object保持一致
+ */
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/*
+ * 1. 清除引用元素的默认派生标识
+ */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "\0020";
+}
+
+/*
+ * 1. 设置文本域滚动条需要时才出现
+ * 2. 设置文本域滚可拖动改变垂直方向尺寸
+ */
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+/*
+ * 1. 清除webkit下表单元素的outline
+ */
+input,
+textarea,
+button,
+select,
+a {
+    outline: 0 none;
+}
+
+/*
+ * 1. 清除Firefox按钮内部边框和补白
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+/*
+ * 1. 重置mark背景色
+ */
+mark {
+    background-color: transparent;
+}
+
+/*
+ * 1. 清除文本线条装饰
+ */
+a,
+ins,
+s,
+u,
+del {
+    text-decoration: none;
+}
+
+/*
+ * 1. 重置对齐方式为基线对齐
+ */
+sup,
+sub {
+    vertical-align: baseline;
+}
